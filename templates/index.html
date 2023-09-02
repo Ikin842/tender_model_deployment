@@ -1,0 +1,149 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Predictor</title>
+</head>
+<body>
+    <form method="post" action="/">
+        <!-- form status spse -->
+        <div class="grid-item">
+            <select name="status_spse">
+                <option selected>Pilih Status SPSE :</option>
+                <option value="0">spse 3</option>
+                <option value="1">spse 4</option>
+                <option value="2">spse 4.3</option>
+                <option value="3">spse 4.4</option>
+                <option value="4">spse 4.5</option>
+            </select>
+        </div>
+        <br><br>
+
+        <!-- form sumber dana -->
+        <div class="grid-item">
+            <select name="sumber_dana">
+                <option selected>Pilih Sumber Dana :</option>
+                <option value="0">APBD</option>
+                <option value="1">APBDP</option>
+                <option value="2">APBN</option>
+                <option value="3">Gabungan</option>
+                <option value="4">APBNP</option>
+            </select>
+        </div>
+        <br><br>
+
+        <!-- form klpd -->
+        <div class="grid-item">
+            <select name="k_l_pd">
+                <option selected>Pilih klpd :</option>
+                <option value="0">Pemerintah Daerah Kabupaten Cirebon</option>
+                <option value="1">Pemerintah Daerah Provinsi Jawa Barat</option>
+                <option value="2">Kementerian Agama</option>
+            </select>
+        </div>
+        <br><br>
+
+        <!-- form jenis tender -->
+        <div class="grid-item">
+            <select name="jenis_tender">
+                <option selected>Pilih Sumber Dana :</option>
+                <option value="0">Pekerjaan Konstruksi</option>
+                <option value="1">Jasa Konsultansi Badan Usaha</option>
+                <option value="2">Pengadaan Barang</option>
+                <option value="3">Jasa Konsultansi Badan Usaha Non Konstruksi</option>
+                <option value="4">Jasa Konsultansi Badan Usaha Konstruksi</option>
+                <option value="5">Jasa Lainnya</option>
+            </select>
+        </div>
+        <br><br>
+
+
+        <!-- form metode pengadaan -->
+        <div class="grid-item">
+            <select name="metode_pengadaan">
+                <option selected>Pilih Metode Pengadaan :</option>
+                <option value="0">Pascakualifikasi Satu File</option>
+                <option value="1">Prakualifikasi Dua File</option>
+                <option value="2">Prakualifikasi Satu File</option>
+            </select>
+        </div>
+        <br><br>
+
+        <!-- form metode pemilihan -->
+        <div class="grid-item">
+            <select name="metode_pemilihan">
+                <option selected>Pilih Metode Pemilihan :</option>
+                <option value="0">Lelang Pemilihan Langsung</option>
+                <option value="1">Tender</option>
+                <option value="2">Lelang Sederhana</option>
+                <option value="3">Seleksi Sederhana</option>
+                <option value="4">Seleksi</option>
+                <option value="5">Seleksi Umum</option>
+                <option value="6">Tender Cepat</option>
+                <option value="7">Lelang Umum</option>
+                <option value="8">Pengadaan Langsung</option>
+            </select>
+        </div>
+        <br><br>
+
+        <!-- form metode evaluasi -->
+        <div class="grid-item">
+            <select name="metode_evaluasi">
+                <option selected>Pilih Metode Evaluasi :</option>
+                <option value="0">Harga Terendah Sistem Gugur</option>
+                <option value="1">Kualitas dan Biaya</option>
+                <option value="2">Pagu Anggaran</option>
+                <option value="3">Biaya Terendah</option>
+            </select>
+        </div>
+        <br><br>
+
+        <div class="grid-item"><label id="form_text">Tahun Anggaran : </label></div>
+        <div class="grid-item"><input type="text" name="tahun_anggaran"></div>
+        <br><br>
+
+        <div class="grid-item"><label id="form_text">nilai_pagu : </label></div>
+        <div class="grid-item"><input type="text" name="nilai_pagu"></div>
+        <br><br>
+
+        <!-- cara bayar -->
+        <div class="grid-item">
+            <select class="form-select form-select" name="cara_bayar">
+                <option selected>cara_bayar : </option>
+                <option value="0">Gabungan Lumsum dan Harga Satuan</option>
+                <option value="1">Lumsum</option>
+                <option value="2">Harga Satuan</option>
+                <option value="3">Persentase</option>
+            </select>
+        </div>
+        <br><br>
+
+        <div class="grid-item">
+            <select class="form-select form-select" name="kualifikasi">
+                <option selected>kualifikasi : </option>
+                <option value="0">Kecil</option>
+                <option value="1">Non Kecil</option>
+                <option value="2">Kecil atau Non Kecil</option>
+                <option value="3">Menengah</option>
+            </select>
+        </div>
+        <br><br>
+
+        <div class="grid-item"><label id="form_text">jumlah_peserta : </label></div>
+        <div class="grid-item"><input type="text" name="jumlah_peserta"></div>
+        <br><br>
+
+        <!-- Tambahkan tombol "Prediction" -->
+        <div class="grid-item">
+            <input type="submit" value="Prediction">
+        </div>
+    </form>
+    <!-- Menampilkan hasil prediksi di bawah form -->
+    <div class="grid-item">
+        <h2>Hasil Prediksi:</h2>
+        <p>{{ prediction_result }}</p>
+    </div>
+</body>
+</html>
